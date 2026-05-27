@@ -1,0 +1,6 @@
+{
+  "name": "Zesh Agency",
+  "description": "Strategic growth consultancy scaling high-value brands through search optimization, generative discovery (AEO/GEO), and high-performance growth engineering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
