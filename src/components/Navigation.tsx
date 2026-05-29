@@ -39,19 +39,23 @@ export default function Navigation({ currentView, setView }: NavigationProps) {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${scrolled
             ? "py-4 bg-[#0b0a09]/85 backdrop-blur-xl border-b border-white/5"
             : "py-6 bg-transparent"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo on far left */}
           <button
             onClick={() => handleLinkClick("home")}
-            className="font-display text-xl font-bold tracking-tight text-white hover:text-accent transition-colors flex items-center gap-2"
+            className="flex items-center focus:outline-none"
+            aria-label="Zesh Agency Home"
           >
-            ZESH<span className="text-accent">.</span>
+            <img
+              src="/site_logo.png"
+              alt="Zesh Agency"
+              className="h-10 w-auto object-contain hover:opacity-80 transition-opacity duration-200"
+            />
           </button>
 
           {/* Centered navigation desktop */}
@@ -62,9 +66,8 @@ export default function Navigation({ currentView, setView }: NavigationProps) {
                 <button
                   key={link.label}
                   onClick={() => handleLinkClick(link.view)}
-                  className={`font-sans text-sm tracking-wide transition-all relative py-1 hover:text-white ${
-                    isActive ? "text-accent font-medium" : "text-white/60"
-                  }`}
+                  className={`font-sans text-sm tracking-wide transition-all relative py-1 hover:text-white ${isActive ? "text-accent font-medium" : "text-white/60"
+                    }`}
                 >
                   {link.label}
                   {isActive && (
@@ -106,9 +109,8 @@ export default function Navigation({ currentView, setView }: NavigationProps) {
                 <button
                   key={link.label}
                   onClick={() => handleLinkClick(link.view)}
-                  className={`font-display text-2xl tracking-wide transition-all ${
-                    isActive ? "text-accent font-semibold" : "text-white/70 hover:text-white"
-                  }`}
+                  className={`font-display text-2xl tracking-wide transition-all ${isActive ? "text-accent font-semibold" : "text-white/70 hover:text-white"
+                    }`}
                 >
                   {link.label}
                 </button>

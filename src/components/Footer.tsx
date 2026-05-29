@@ -27,7 +27,7 @@ export default function Footer({ setView, setSelectedDetailId }: FooterProps) {
     setSelectedDetailId(null);
     setView(view);
     window.scrollTo({ top: 0, behavior: "smooth" });
-    
+
     if (hash) {
       setTimeout(() => {
         const el = document.getElementById(hash);
@@ -58,7 +58,7 @@ export default function Footer({ setView, setSelectedDetailId }: FooterProps) {
 
   return (
     <footer className="relative bg-[#060505] text-white border-t border-white/5 pt-20 pb-12 overflow-hidden">
-      
+
       {/* GLOBAL BOTTOM CTA SECTION (Section 11 Copy) */}
       <div className="max-w-7xl mx-auto px-6 mb-24 border-b border-white/5 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -71,7 +71,7 @@ export default function Footer({ setView, setSelectedDetailId }: FooterProps) {
               We analyze your website metrics, inspect competitor search campaigns, and map out custom acquisition strategies from day one.
             </p>
           </div>
-          
+
           <div className="lg:col-span-4 flex flex-col sm:flex-row gap-4 justify-end">
             <button
               onClick={() => handleNavClick("contact")}
@@ -91,16 +91,20 @@ export default function Footer({ setView, setSelectedDetailId }: FooterProps) {
 
       {/* METADATA DIRECTORIES & LOGO SPAN */}
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 text-left mb-16">
-        
+
         {/* Brand layout left */}
         <div className="md:col-span-4 flex flex-col justify-between">
           <div>
-            <span className="font-display text-4xl font-black text-white tracking-widest block mb-4">ZESH.</span>
+            <img
+              src="/site_logo.png"
+              alt="Zesh Agency"
+              className="h-12 w-auto object-contain mb-4 opacity-90"
+            />
             <p className="font-sans text-xs text-white/40 leading-relaxed max-w-xs font-light">
               Partnering with ambitious brands to engineer high-converting growth systems.
             </p>
           </div>
-          
+
           {/* Social icons */}
           <div className="flex gap-4 mt-8">
             <a href="#" className="p-2 border border-white/5 hover:border-accent text-white/40 hover:text-accent transition-all duration-200">

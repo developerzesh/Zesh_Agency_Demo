@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ViewType } from "../types";
+import { CLIENT_LOGOS } from "../data";
 import { Flame, Zap, ArrowUpRight, Radio, Sparkles, TrendingUp, Sliders } from "lucide-react";
 
 interface HeroProps {
@@ -12,18 +13,7 @@ export default function Hero({ setView }: HeroProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  const logos = [
-    "TarsCase",
-    "MineWork",
-    "OPJE Studio",
-    "OLD YO Co",
-    "Hamilton Tech",
-    "Ther Digital",
-    "Clinique Healthcare",
-    "ContentStack Systems",
-    "NextRound Advisory",
-    "Psyche Medicine",
-  ];
+
 
   // Soft slow swell of the metrics to simulate live updates
   useEffect(() => {
@@ -46,17 +36,17 @@ export default function Hero({ setView }: HeroProps) {
   };
 
   return (
-    <section 
+    <section
       onMouseMove={handleMouseMove}
-      className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between overflow-hidden pt-32 pb-6 px-4 sm:px-8 md:px-12 border-b border-white/5 transition-all duration-1000 select-text"
+      className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between pt-13 pb-6 px-4 sm:px-8 md:px-12 border-b border-white/5 transition-all duration-1000 select-text"
       style={{
         background: "radial-gradient(circle at 80% 30%, #4a0104 0%, #1a0002 45%, #0a0001 80%, #050000 100%)"
       }}
     >
       {/* GLOWING HOT SPOTLIGHTS: Capturing the supreme warm-red lighting from the reference mockup */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-red-600/20 rounded-full blur-[160px] pointer-events-none mix-blend-screen" />
-      <div 
-        className="absolute top-10 right-10 w-[450px] h-[450px] rounded-full blur-[120px] pointer-events-none mix-blend-screen transition-all duration-300 opacity-70" 
+      <div
+        className="absolute top-10 right-10 w-[450px] h-[450px] rounded-full blur-[120px] pointer-events-none mix-blend-screen transition-all duration-300 opacity-70"
         style={{
           background: "radial-gradient(circle, rgba(255,100,50,0.3) 0%, rgba(220,10,30,0.15) 50%, rgba(0,0,0,0) 100%)",
           transform: `translate(${mousePos.x * 0.04}px, ${mousePos.y * 0.04}px)`
@@ -65,15 +55,15 @@ export default function Hero({ setView }: HeroProps) {
       <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-[#ff3a45]/5 rounded-full blur-[100px] pointer-events-none mix-blend-screen" />
 
       {/* Decorative vector grid lines running gently behind */}
-      <div 
-        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" 
+      <div
+        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none"
         style={{ maskImage: "radial-gradient(circle at 75% 40%, black, transparent 80%)", WebkitMaskImage: "radial-gradient(circle at 75% 40%, black, transparent 80%)" }}
       />
 
       {/* INTEGRATED MAJESTIC BACKGROUND GRAPHIC: Hand supporting the rising white-hot curve, unified fluidly behind the copy */}
       <div className="absolute inset-x-0 inset-y-0 w-full h-full pointer-events-none select-none z-0 overflow-hidden">
-        <svg 
-          viewBox="0 0 1000 700" 
+        <svg
+          viewBox="0 0 1000 700"
           className="absolute right-0 bottom-0 w-full h-full min-w-[1024px] opacity-90 transition-all duration-1000"
           preserveAspectRatio="xMidYMax slice"
         >
@@ -88,7 +78,7 @@ export default function Hero({ setView }: HeroProps) {
                 <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
-            
+
             <filter id="heavyGlow" x="-30%" y="-30%" width="160%" height="160%">
               <feGaussianBlur stdDeviation="22" result="blur" />
               <feMerge>
@@ -132,40 +122,40 @@ export default function Hero({ setView }: HeroProps) {
           {/* BACKGROUND CHARTS BAR COLUMNS - Stylized exactly like the columns in the feedback photo */}
           <g className="opacity-30 lg:opacity-50">
             {/* Column 1 */}
-            <rect 
-              x="620" 
-              y="280" 
-              width="28" 
-              height="220" 
-              rx="4" 
-              fill="url(#barGradient)" 
+            <rect
+              x="620"
+              y="280"
+              width="28"
+              height="220"
+              rx="4"
+              fill="url(#barGradient)"
             />
             {/* Column 2 */}
-            <rect 
-              x="680" 
-              y="220" 
-              width="28" 
-              height="280" 
-              rx="4" 
-              fill="url(#barGradient)" 
+            <rect
+              x="680"
+              y="220"
+              width="28"
+              height="280"
+              rx="4"
+              fill="url(#barGradient)"
             />
             {/* Column 3 */}
-            <rect 
-              x="740" 
-              y="150" 
-              width="28" 
-              height="350" 
-              rx="4" 
-              fill="url(#barGradient)" 
+            <rect
+              x="740"
+              y="150"
+              width="28"
+              height="350"
+              rx="4"
+              fill="url(#barGradient)"
             />
             {/* Column 4 - Strongest, highest-converting volume anchor */}
-            <rect 
-              x="800" 
-              y="60" 
-              width="28" 
-              height="440" 
-              rx="4" 
-              fill="url(#barGradient)" 
+            <rect
+              x="800"
+              y="60"
+              width="28"
+              height="440"
+              rx="4"
+              fill="url(#barGradient)"
               stroke="rgba(255, 185, 21, 0.25)"
               strokeWidth="1.5"
             />
@@ -174,7 +164,7 @@ export default function Hero({ setView }: HeroProps) {
           {/* SCULPTED HAND VISUAL - Recreating the hand silhouette holding the arrow */}
           <g filter="url(#handShadow)">
             {/* Physical hand contour representation */}
-            <path 
+            <path
               d="M 200,580 
                  C 290,560 360,460 430,420 
                  C 500,380 560,375 620,385 
@@ -183,22 +173,22 @@ export default function Hero({ setView }: HeroProps) {
                  C 795,240 778,228 758,238 
                  C 720,246 680,275 635,310 
                  C 590,345 530,385 470,420 
-                 C 400,462 315,490 220,535 Z" 
-              fill="url(#handMesh)" 
-              opacity="0.95" 
+                 C 400,462 315,490 220,535 Z"
+              fill="url(#handMesh)"
+              opacity="0.95"
             />
 
             {/* Hand highlights reflecting the hot yellow neon curve */}
-            <path 
+            <path
               d="M 430,420 
                  C 500,380 560,375 620,385 
                  C 675,395 720,385 750,360 
-                 C 780,335 790,300 793,265" 
-              fill="none" 
-              stroke="#ffea5a" 
-              strokeWidth="3" 
-              opacity="0.9" 
-              filter="url(#laserGlow)" 
+                 C 780,335 790,300 793,265"
+              fill="none"
+              stroke="#ffea5a"
+              strokeWidth="3"
+              opacity="0.9"
+              filter="url(#laserGlow)"
             />
 
             {/* Joint structure mapping to replicate supportive architectural grid lines */}
@@ -216,48 +206,48 @@ export default function Hero({ setView }: HeroProps) {
           {/* SWEEPING NEON RISING ARROW - Sourced beautifully from reference graphic */}
           <g>
             {/* Dynamic underlying heat bloom path */}
-            <path 
-              d="M 200,520 Q 370,400 500,410 C 610,420 720,360 820,140" 
-              fill="none" 
-              stroke="#ff111e" 
-              strokeWidth="22" 
-              opacity="0.35" 
-              filter="url(#heavyGlow)" 
+            <path
+              d="M 200,520 Q 370,400 500,410 C 610,420 720,360 820,140"
+              fill="none"
+              stroke="#ff111e"
+              strokeWidth="22"
+              opacity="0.35"
+              filter="url(#heavyGlow)"
             />
 
             {/* Intermediate vibrant core glow path */}
-            <path 
-              d="M 200,520 Q 370,400 500,410 C 610,420 720,360 820,140" 
-              fill="none" 
-              stroke="url(#neonGradient)" 
-              strokeWidth="10" 
-              opacity="0.9" 
-              filter="url(#laserGlow)" 
+            <path
+              d="M 200,520 Q 370,400 500,410 C 610,420 720,360 820,140"
+              fill="none"
+              stroke="url(#neonGradient)"
+              strokeWidth="10"
+              opacity="0.9"
+              filter="url(#laserGlow)"
             />
 
             {/* White-Hot Core Laser Line */}
-            <motion.path 
+            <motion.path
               initial={{ pathLength: 0 }}
               animate={{ pathLength: 1 }}
               transition={{ duration: 1.4, ease: "easeOut" }}
-              d="M 200,520 Q 370,400 500,410 C 610,420 720,360 820,140" 
-              fill="none" 
-              stroke="#ffffff" 
-              strokeWidth="4" 
+              d="M 200,520 Q 370,400 500,410 C 610,420 720,360 820,140"
+              fill="none"
+              stroke="#ffffff"
+              strokeWidth="4"
               strokeLinecap="round"
             />
 
             {/* Hot Yellow Arrowhead Pointer exactly indicating the rise */}
             <g transform="translate(820, 140)">
-              <motion.path 
+              <motion.path
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.4 }}
-                d="M -35,5 L 5,-5 L -5,-35" 
-                fill="none" 
-                stroke="#ffffff" 
-                strokeWidth="5" 
-                strokeLinecap="round" 
+                d="M -35,5 L 5,-5 L -5,-35"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth="5"
+                strokeLinecap="round"
                 strokeLinejoin="round"
                 filter="url(#laserGlow)"
               />
@@ -282,9 +272,8 @@ export default function Hero({ setView }: HeroProps) {
       </div>
 
       {/* FLUID INTERACTIVE HERO TEXT CONTENT: Perfectly overlaying the artwork in a cohesive, unified fluid layout */}
-      <div className="max-w-7xl mx-auto w-full flex-grow flex flex-col justify-center relative z-10 py-12 md:py-24 select-text">
-        <div className="max-w-4xl flex flex-col items-start text-left space-y-8 lg:space-y-12">
-          
+      <div className="max-w-7xl mx-auto w-full flex flex-col justify-center relative z-10 py-8 md:py-12 select-text">
+        <div className="max-w-4xl flex flex-col items-start text-left space-y-3 lg:space-y-4">
           {/* Badge Cluster */}
           <div className="flex flex-wrap gap-2.5">
             <motion.div
@@ -295,7 +284,7 @@ export default function Hero({ setView }: HeroProps) {
             >
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
               <span className="font-mono text-[9px] uppercase tracking-widest text-white/80 font-semibold">
-                30 Under 30 Marketing
+                Awarded 30 under 30 for Innovative Marketing
               </span>
             </motion.div>
           </div>
@@ -305,17 +294,17 @@ export default function Hero({ setView }: HeroProps) {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[76px] font-extrabold text-white leading-[1.08] tracking-tight text-left max-w-3xl"
+            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[76px] font-extrabold text-white leading-[1.02] tracking-tight text-left max-w-3xl"
           >
             Empowering brands with{" "}
-            <span 
+            <span
               className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-300 to-[#ff4b3c]"
               style={{ filter: "drop-shadow(0 0 25px rgba(255, 28, 42, 0.35))" }}
             >
               search systems
             </span>{" "}
             and{" "}
-            <span 
+            <span
               className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#ff4b3c] via-orange-400 to-white"
               style={{ filter: "drop-shadow(0 0 25px rgba(255, 28, 42, 0.35))" }}
             >
@@ -353,7 +342,7 @@ export default function Hero({ setView }: HeroProps) {
               <span>Book discovery</span>
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </button>
-            
+
             <button
               onClick={() => {
                 setView("insights");
@@ -381,33 +370,28 @@ export default function Hero({ setView }: HeroProps) {
         </div>
       </div>
 
-      {/* TRUST LOGOS MARQUEE */}
-      <div className="w-full mt-auto pt-4 border-t border-white/5 z-10">
-        <div className="relative w-full overflow-hidden flex items-center py-2 bg-black/20 backdrop-blur-xs">
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#050000] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#050000] to-transparent z-10 pointer-events-none" />
+      {/* TRUST LOGOS MARQUEE - Re-integrated directly into Hero */}
+      <div className="w-full pt-6 border-t border-white/5 z-20">
+        <div className="relative w-full overflow-hidden flex items-center py-8 bg-black/20 backdrop-blur-xs">
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#050000] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#050000] to-transparent z-10 pointer-events-none" />
 
-          <div className="flex w-max animate-[marquee_30s_linear_infinite] whitespace-nowrap gap-12 pr-12 hover:[animation-play-state:paused]">
-            {logos.concat(logos).map((logo, index) => (
+          <div className="flex w-max animate-marquee items-center whitespace-nowrap gap-16 pr-16 hover:[animation-play-state:paused]">
+            {CLIENT_LOGOS.concat(CLIENT_LOGOS).map((logo, index) => (
               <div
-                key={`${logo}-${index}`}
-                className="flex items-center justify-center font-display text-[10px] sm:text-xs tracking-widest text-white/35 uppercase font-semibold transition-colors duration-300 hover:text-[#ff1c2a]/80 select-none animate-pulse"
-                style={{ animationDuration: "10s" }}
+                key={`${logo.alt}-${index}`}
+                className="flex items-center justify-center select-none px-6"
               >
-                <span className="text-[#ff1c2a]/50 mr-2.5 font-mono text-xs">◆</span>
-                {logo}
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-10 sm:h-12 w-auto max-w-[180px] object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
               </div>
             ))}
           </div>
         </div>
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
-        }
-      `}</style>
     </section>
   );
 }

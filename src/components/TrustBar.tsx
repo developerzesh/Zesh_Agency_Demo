@@ -1,18 +1,7 @@
-import { motion } from "motion/react";
+import { CLIENT_LOGOS } from "../data";
 
 export default function TrustBar() {
-  const logos = [
-    "TarsCase",
-    "MineWork",
-    "OPJE Studio",
-    "OLD YO Co",
-    "Hamilton Tech",
-    "Ther Digital",
-    "Clinique Healthcare",
-    "ContentStack Systems",
-    "NextRound Advisory",
-    "Psyche Medicine",
-  ];
+
 
   return (
     <section className="bg-warm-dark py-12 border-y border-white/5 relative overflow-hidden">
@@ -30,29 +19,27 @@ export default function TrustBar() {
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-warm-dark to-transparent z-10 pointer-events-none" />
 
         {/* Rolling Container */}
-        <div className="flex w-max animate-[marquee_35s_linear_infinite] whitespace-nowrap gap-16 pr-16 hover:[animation-play-state:paused]">
-          {/* First loop iterations */}
-          {logos.concat(logos).map((logo, index) => (
+        <div className="flex w-max animate-[marquee_35s_linear_infinite] items-center whitespace-nowrap gap-16 pr-16 hover:[animation-play-state:paused]">
+          {CLIENT_LOGOS.concat(CLIENT_LOGOS).map((logo, index) => (
             <div
-              key={`${logo}-${index}`}
-              className="flex items-center justify-center font-display text-base tracking-widest text-white/30 uppercase font-semibold transition-colors duration-300 hover:text-accent/60 select-none"
+              key={`${logo.alt}-${index}`}
+              className="flex items-center justify-center select-none transition-all duration-300"
             >
-              <span className="text-white/10 mr-3 font-mono text-xs">◆</span>
-              {logo}
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="h-8 w-auto max-w-[120px] object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              />
             </div>
           ))}
         </div>
       </div>
 
-      {/* Custom Tail Wind CSS styled keyframe for marquee scroll */}
+      {/* Keyframe for marquee scroll */}
       <style>{`
         @keyframes marquee {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+          0%   { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
         }
       `}</style>
     </section>

@@ -781,3 +781,20 @@ export const JOB_ROLES_DATA: JobRole[] = [
     autonomyLevel: "Design and deploy indexing roadmaps for client portfolios."
   }
 ];
+export const CLIENT_LOGOS = [
+  { src: "/Clutch.png", alt: "Clutch" },
+  { src: "/Goldmine.png", alt: "Goldmine" },
+  { src: "/Heita.png", alt: "Heita" },
+  { src: "/Makobrew.png", alt: "Makobrew" },
+  { src: "/Meetstream.png", alt: "Meetstream" },
+  { src: "/Pawparazzi.png", alt: "Pawparazzi" },
+  { src: "/Pincha.png", alt: "Pincha" },
+  { src: "/bajaj.png", alt: "Bajaj" },
+  { src: "/meta_logo.png", alt: "Meta" },
+  { src: "/nyx.png", alt: "Nyx" },
+  { src: "/saarthee.png", alt: "Saarthee" },
+  { src: "/sdb.png", alt: "SDB" },
+  { src: "/shark_tank_logo.png", alt: "Shark Tank" },
+  { src: "/tata.png", alt: "Tata" },
+  { src: "/xarwin.avif", alt: "Xarwin" },
+];

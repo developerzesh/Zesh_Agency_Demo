@@ -8,7 +8,6 @@ import { ViewType } from "./types";
 import CustomCursor from "./components/CustomCursor";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
-import TrustBar from "./components/TrustBar";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Solutions from "./components/Solutions";
 import Achievements from "./components/Achievements";
@@ -84,7 +83,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-warm-dark text-white selection:bg-accent/35 selection:text-white selection:outline-none overflow-hidden">
-      
+
       {/* High-quality noise film grain overlay across the entire workspace */}
       <div className="fixed inset-0 z-50 pointer-events-none grain-overlay" />
 
@@ -107,7 +106,7 @@ export default function App() {
         setView={setView}
         setSelectedDetailId={setSelectedDetailId}
       />
-      
+
     </div>
   );
 }
